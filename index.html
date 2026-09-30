@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>إنقاذ حياة | منصة التبرع بالدم وبنوك الدم في مصر</title>
+<meta name="description" content="منصة إنقاذ حياة تربط المتبرعين بالدم بمن يحتاجه: تبرع بالدم، ابحث عن متبرع في منطقتك، اطّلع على طلبات الدم العاجلة وحملات التبرع.">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:title" content="إنقاذ حياة | منصة التبرع بالدم">
+<meta property="og:description" content="اربط نفسك بأقرب متبرع بالدم، أو ابحث عن تبرع في منطقتك. طلبات الدم والحملات في مكان واحد.">
+<meta property="og:image" content="img/og-cover.jpg">
+<meta name="twitter:image" content="img/og-cover.jpg">
+<meta name="twitter:title" content="إنقاذ حياة | منصة التبرع بالدم">
+<meta name="twitter:description" content="اربط نفسك بأقرب متبرع بالدم، أو ابحث عن تبرع في منطقتك.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="img/savelife-red.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">تخطي إلى المحتوى الرئيسي</a>
+
+<!-- ================= Navigation ================= -->
+<header class="site-nav">
+  <div class="container site-nav__inner">
+    <a class="site-nav__brand" href="index.html" aria-label="إنقاذ حياة — الصفحة الرئيسية">
+      <img src="img/savelife-red.svg" alt="" width="32" height="32">
+      <span>إنقاذ حياة</span>
+    </a>
+
+    <button class="site-nav__toggle" type="button" aria-expanded="false"
+            aria-controls="nav-panel" aria-label="فتح قائمة التنقل">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="site-nav__panel" id="nav-panel">
+      <nav aria-label="التنقل الرئيسي">
+        <ul class="site-nav__links">
+          <li><a href="index.html" aria-current="page">الرئيسية</a></li>
+          <li><a href="#about">عن المنصة</a></li>
+          <li><a href="volunteers.html">المتبرعون</a></li>
+          <li><a href="bloodRequests.html">طلبات الدم</a></li>
+          <li><a href="#camps">حملات التبرع</a></li>
+          <li><a href="#how">كيف أتبرع؟</a></li>
+          <li><a class="btn btn--secondary btn--sm" href="profile.html">حسابي</a></li>
+          <li><a class="btn btn--primary btn--sm" href="regestration.html">
+          <i class="fas fa-user-plus icon" aria-hidden="true"></i>
+          سجّل كمتبرع
+        </a></li>
+        </ul>
+        <!-- <div class="site-nav__actions">
+        <a class="btn btn--secondary btn--sm" href="profile.html">حسابي</a>
+        <a class="btn btn--primary btn--sm" href="regestration.html">
+          <i class="fas fa-user-plus icon" aria-hidden="true"></i>
+          سجّل كمتبرع
+        </a>
+      </div> -->
+      </nav>
+
+      
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <i class="fas fa-heartbeat" aria-hidden="true"></i>
+          منصة مصرية للتبرع بالدم
+        </p>
+
+        <h1 class="display-title hero__title">
+         قطرة دم واحدة قد تنقذ حياة
+        </h1>
+
+        <p class="hero__lead">
+          إنقاذ حياة تربط المتبرعين بمن يحتاج الدم فعلًا. سجّل فصيلتك وموقعك،
+          وسنوّهك فور صدور طلب يطابقك.
+        </p>
+
+        <!-- Primary action first in both reading and DOM order. -->
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="regestration.html">
+            <i class="fas fa-heart icon" aria-hidden="true"></i>
+            تبرع بالدم
+          </a>
+          <a class="btn btn--secondary btn--lg" href="bloodRequests.html">
+            <i class="fas fa-hand-holding-heart icon" aria-hidden="true"></i>
+            أحتاج إلى دم
+          </a>
+        </div>
+
+        <dl class="hero__trust">
+          <div class="hero__trust-item">
+            <dt><i class="fas fa-check-circle" aria-hidden="true"></i> الرقم القومي لا يُعرض</dt>
+            <dd>يُستخدم للتحقّق فقط، ويظهر للمتبرعين الاسم والفصيلة والمدينة</dd>
+          </div>
+          <div class="hero__trust-item">
+            <dt><i class="fas fa-check-circle" aria-hidden="true"></i> الأهلية يحدّدها بنك الدم</dt>
+            <dd>الفحص الطبي يسبق التبرع، والتسجيل هنا ليس إعلانًا للأهلية</dd>
+          </div>
+          <div class="hero__trust-item">
+            <dt><i class="fas fa-check-circle" aria-hidden="true"></i> بدون مقابل</dt>
+            <dd>لا رسوم على المتبرع ولا على المريض</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <div class="hero__drop"></div>
+        <img src="img/blood-drop-37719.png" alt="" width="258" height="299" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Statistics ================= -->
+  <section class="stats" aria-labelledby="stats-heading">
+    <div class="container">
+      <h2 class="visually-hidden" id="stats-heading">أرقام المنصة</h2>
+      <p class="section-kicker section-kicker--on-dark">أثر نبدأ به</p>
+
+      <dl class="stats__grid" data-stats-mount>
+        <!-- Rendered from js/render.js -->
+      </dl>
+
+      <p class="stats__note">
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        هذه أرقام توضيحية لعرض التصميم فقط.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= About ================= -->
+  <section class="section" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="split">
+        <div class="split__media reveal">
+          <img src="img/about/gallery_2.jpg" alt="متطوعون يتبرعون بالدم في أحد مراكز بنك الدم"
+               width="800" height="600" loading="lazy">
+        </div>
+
+        <div class="split__body reveal">
+          <p class="section-kicker">عن المنصة</p>
+          <h2 id="about-heading">دمك يصل في الوقت المناسب</h2>
+          <p>
+            فكرت المنصة في سؤال واحد: كيف يوصل المتبرع بالدم إلى أقرب مريض
+            محتاج لفصيلته؟ الجواب هو ربط الطرفين مباشرة بدل البحث اليدوي.
+          </p>
+          <ul class="check-list">
+            <li>الفحص الطبي يبقى مسؤولية بنك الدم قبل أي سحب دم.</li>
+            <li>المتبرع يختار فصيلته ومدينة الاستلام بنفسه.</li>
+            <li>الطلب يوضّح الفصيلة والوحدات والمكان ودرجة الأولوية.</li>
+            <li>لا يتم تحصيل أي مبلغ مقابل الربط بين الطرفين.</li>
+          </ul>
+          <a class="btn btn--secondary" href="#how">اعرف كيف تعمل المنصة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= How it works ================= -->
+  <section class="section section--sunken" id="how" aria-labelledby="how-heading">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-kicker">الخطوات</p>
+        <h2 id="how-heading">التبرع بالدم في ثلاث خطوات</h2>
+        <p class="section-head__lead">
+          من التسجيل حتى إشعار الطلب، كل خطوة واضحة وموضحة.
+        </p>
+      </header>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__num" aria-hidden="true">١</span>
+          <h3 class="step__title">سجّل بياناتك</h3>
+          <p class="step__text">فصيلة الدم والمدينة والنطاق. يستغرق الأمر دقيقة واحدة.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num" aria-hidden="true">٢</span>
+          <h3 class="step__title">استقبل التنبيه</h3>
+          <p class="step__text">نوصلك بالطلبات المطابقة لفصيلتك في نطاق جغرافي قريب منك.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num" aria-hidden="true">٣</span>
+          <h3 class="step__title">تبرّع في أقرب مركز</h3>
+          <p class="step__text">نعرض لك عنوان المركز ومواعيده. مدة التبرع نفسها يحدّدها بنك الدم.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= Donation camps ================= -->
+  <section class="section" id="camps" aria-labelledby="camps-heading">
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="section-kicker">حملات قريبة</p>
+          <h2 id="camps-heading">حملات التبرع بالدم</h2>
+          <p class="section-head__lead">مواعيد مؤقتة في الجامعات والمراكز التجارية.</p>
+        </div>
+        <span class="demo-badge">
+          <i class="fas fa-flask" aria-hidden="true"></i>
+          بيانات تجريبية
+        </span>
+      </header>
+
+      <ul class="camps" data-camps-mount>
+        <!-- Rendered from js/render.js -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= Urgent requests preview ================= -->
+  <section class="section section--sunken" aria-labelledby="requests-heading">
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="section-kicker">احتاج الآن</p>
+          <h2 id="requests-heading">طلبات دم عاجلة</h2>
+          <p class="section-head__lead">الطلبات مرتّبة حسب درجة الأولوية.</p>
+        </div>
+        <a class="btn btn--secondary" href="bloodRequests.html">
+          كل الطلبات
+          <i class="fas fa-arrow-left icon" aria-hidden="true"></i>
+        </a>
+      </header>
+
+      <ul class="request-teaser-list" data-urgent-mount>
+        <!-- Rendered from js/render.js -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= Testimonials ================= -->
+  <section class="section" aria-labelledby="stories-heading">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-kicker">قصص من الميدان</p>
+        <h2 id="stories-heading">كل تبرع له حكاية</h2>
+      </header>
+
+      <ul class="stories" data-stories-mount>
+        <!-- Rendered from js/render.js -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= Final CTA ================= -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="container cta-band__inner">
+      <div>
+        <h2 id="cta-heading">التبرع عادة، لا مرة واحدة</h2>
+        <p>
+          يمكنك التبرع كل 3 أشهر. تبرعك المتكرر يضمن توفر الدم في اللحظة
+          التي يحتاجه فيها أحد.
+        </p>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--inverse btn--lg" href="regestration.html">
+          <i class="fas fa-user-plus icon" aria-hidden="true"></i>
+          سجّل كمتبرع
+        </a>
+        <a class="btn btn--lg btn-quiet-dark" href="volunteers.html">
+          تصفّح المتبرعين
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="site-footer__grid">
+
+      <div>
+        <h2 class="site-footer__heading">تواصل معنا</h2>
+        <ul class="site-footer__list">
+          <li class="site-footer__contact">
+            <i class="icon fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>مركز بنك الدم — سيدي بشر، حي سيدي بشر، الإسكندرية</span>
+          </li>
+          <li class="site-footer__contact">
+            <i class="icon fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>مركز بنك الدم — العجمي، الإسكندرية</span>
+          </li>
+          <li class="site-footer__contact">
+            <i class="icon fas fa-phone" aria-hidden="true"></i>
+            <a href="tel:+200348501234">‎03 48501234</a>
+          </li>
+          <li class="site-footer__contact">
+            <i class="icon fas fa-clock" aria-hidden="true"></i>
+            <span>يوميًا من 9 صباحًا حتى 5 مساءً</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__heading">روابط سريعة</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="volunteers.html">المتبرعون</a></li>
+          <li><a href="bloodRequests.html">طلبات الدم</a></li>
+          <li><a href="regestration.html">تسجيل متبرع</a></li>
+          <li><a href="profile.html">الملف الشخصي</a></li>
+          <li><a href="Admin.html">لوحة الإدارة</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__heading">النشرة البريدية</h2>
+        <p class="site-footer__text">
+          كن أول من يعرف بحملات التبرع القريبة منك.
+        </p>
+        <form class="site-footer__subscribe" data-newsletter novalidate>
+          <label class="visually-hidden" for="footer-email">بريدك الإلكتروني</label>
+          <input class="form-control" type="email" id="footer-email" name="email"
+                 placeholder="name@example.com" required>
+          <button class="btn btn--primary" type="submit">اشترك</button>
+        </form>
+        <p class="field__hint" data-newsletter-status role="status"></p>
+
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__legal">© 2026 إنقاذ حياة — نموذج واجهة أمامي.</p>
+      <p class="site-footer__legal">
+        الموقع لا يستقبل أو يخزّن أي بيانات مستخدمين فعليًا.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" type="button" aria-label="العودة إلى أعلى الصفحة">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<div class="toast-region" role="region" aria-label="التنبيهات" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/render.js"></script>
+</body>
+</html>

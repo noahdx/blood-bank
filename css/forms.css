@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Save Life — form pages
+   Shared by the registration form and the profile forms.
+   ========================================================================== */
+
+/* ---------- Two-column layout ---------- */
+.form-layout {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .form-layout {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+  }
+}
+
+.form-layout__aside {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 992px) {
+  .form-layout__aside {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--space-4));
+  }
+}
+
+/* ---------- Form card ---------- */
+.form-card {
+  margin: 0;
+}
+
+.form-card .card__body + .card__body {
+  border-top: 1px solid var(--color-border);
+}
+
+.form-card .card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+@media (max-width: 575.98px) {
+  .form-card .card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-card .btn-group-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-card .btn-group-actions .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Section headings inside the form ---------- */
+.form-section__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-h3);
+}
+
+.form-section__num {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  font-size: var(--text-small);
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-soft-border);
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- Two-column field grid ---------- */
+.form-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Checkbox set as a fieldset ---------- */
+.choice-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.choice-set > legend {
+  flex-basis: 100%;
+  margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
+  .choice-set {
+    padding-inline-start: var(--space-5);
+  }
+}
+
+/* ---------- Sidebar cards ---------- */
+.sticky-card {
+  margin: 0;
+}
+
+.tick-list {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+}
+
+.tick-list li {
+  position: relative;
+  padding-inline-start: var(--space-5);
+  margin-block-end: var(--space-3);
+  font-size: var(--text-small);
+  color: var(--color-ink-soft);
+}
+
+.tick-list li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  color: var(--color-success);
+}
+
+.tick-list--muted li {
+  color: var(--color-text-muted);
+}
+
+.card__title i {
+  margin-inline-end: var(--space-2);
+  color: var(--color-primary);
+}

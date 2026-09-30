@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Save Life — profile page
+   ========================================================================== */
+
+.profile-breadcrumb {
+  margin-top: var(--space-6);
+}
+
+/* ---------- Profile header ---------- */
+.profile-head {
+  margin-top: var(--space-5);
+  overflow: hidden;
+}
+
+.profile-head__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-6);
+}
+
+.profile-head__avatar img {
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+  background-color: var(--color-surface-sunken);
+  border: 3px solid var(--color-primary-soft-border);
+}
+
+.profile-head__identity {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+
+.profile-head__name {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-h1);
+}
+
+.profile-head__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.profile-head__sep {
+  color: var(--color-text-faint);
+}
+
+.profile-head__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.profile-head__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (max-width: 575.98px) {
+  .profile-head__body {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .profile-head__actions {
+    width: 100%;
+  }
+
+  .profile-head__actions .btn {
+    flex: 1 1 auto;
+  }
+}
+
+.profile-head__notice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.profile-head__notice i {
+  color: var(--color-info);
+}
+
+.profile-head__notice p {
+  margin: 0;
+}
+
+/* ---------- Stat row ---------- */
+.profile-stats {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-stat {
+  padding: var(--space-5);
+  text-align: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+}
+
+.profile-stat__value {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-h1);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: var(--leading-tight);
+}
+
+.profile-stat__label {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Tabs ---------- */
+.profile-tabs__list {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  margin-bottom: var(--space-5);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  overflow-x: auto;
+}
+
+.profile-tabs__tab {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font: inherit;
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.profile-tabs__tab:hover {
+  color: var(--color-ink);
+}
+
+.profile-tabs__tab[aria-selected="true"] {
+  color: var(--color-primary);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.profile-tabs__panel:focus-visible {
+  outline: 3px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Settings panel ---------- */
+#panel-settings .card + .card {
+  margin-top: var(--space-4);
+}
+
+.card__title--danger i,
+.card__title--danger {
+  color: var(--color-danger);
+}
+
+@media (min-width: 992px) {
+  #panel-settings .card {
+    max-width: 40rem;
+  }
+}

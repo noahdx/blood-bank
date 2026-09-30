@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>لوحة الإدارة | إنقاذ حياة</title>
+<meta name="description" content="واجهة إدارة المنصة: المتبرعون، الحملات، طلبات الدم، وبنوك الدم.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" href="img/savelife-red.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-body">
+
+<a class="skip-link" href="#main">تخطي إلى المحتوى الرئيسي</a>
+
+<!--
+  Admin chrome is intentionally different from the public site: a dark sidebar
+  instead of the public top navigation, because this is an application screen.
+-->
+<div class="admin-shell">
+
+  <aside class="admin-side" aria-label="أقسام لوحة الإدارة">
+    <a class="admin-side__brand" href="index.html">
+      <img src="img/savelife-red.svg" alt="" width="28" height="28">
+      <span>إنقاذ حياة</span>
+    </a>
+
+    <nav aria-label="التنقل داخل لوحة الإدارة">
+      <ul class="admin-side__nav">
+        <li>
+          <a class="admin-side__link is-active" href="#overview" aria-current="page">
+            <i class="fas fa-th-large" aria-hidden="true"></i>
+            <span>نظرة عامة</span>
+          </a>
+        </li>
+        <li>
+          <a class="admin-side__link" href="#donors">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <span>المتبرعون</span>
+            <span class="admin-side__count" data-count-for="donors">٠</span>
+          </a>
+        </li>
+        <li>
+          <a class="admin-side__link" href="#requests">
+            <i class="fas fa-heartbeat" aria-hidden="true"></i>
+            <span>طلبات الدم</span>
+            <span class="admin-side__count" data-count-for="requests">٠</span>
+          </a>
+        </li>
+        <li>
+          <a class="admin-side__link" href="#camps">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            <span>الحملات</span>
+            <span class="admin-side__count" data-count-for="camps">٠</span>
+          </a>
+        </li>
+        <li>
+          <a class="admin-side__link" href="#banks">
+            <i class="fas fa-hospital" aria-hidden="true"></i>
+            <span>بنوك الدم</span>
+            <span class="admin-side__count" data-count-for="banks">٠</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="admin-side__back" href="index.html">
+      <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      العودة إلى الموقع
+    </a>
+  </aside>
+
+  <div class="admin-main">
+
+    <header class="admin-topbar">
+      <div>
+        <h1 class="admin-topbar__title">لوحة الإدارة</h1>
+        <p class="admin-topbar__sub">نظرة عامة على بيانات المنصة</p>
+      </div>
+
+      <div class="admin-topbar__actions">
+        <span class="demo-badge">
+          <i class="fas fa-flask" aria-hidden="true"></i>
+          بيانات تجريبية — لا يوجد خادم
+        </span>
+        <button class="admin-icon-btn" type="button" aria-label="الإشعارات">
+          <i class="fas fa-bell" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-content" id="main">
+
+      <!-- ============ Overview ============ -->
+      <section id="overview" class="admin-section" aria-labelledby="overview-heading">
+        <h2 class="visually-hidden" id="overview-heading">نظرة عامة</h2>
+
+        <div class="admin-notice">
+          <i class="icon fas fa-info-circle" aria-hidden="true"></i>
+          <p>
+            هذه الواجهة للعرض فقط. الحذف والتعديل لا يفعلان شيئًا حقيقيًا — لا توجد
+            قاعدة بيانات متصلة بالموقع.
+          </p>
+        </div>
+
+        <ul class="admin-kpis">
+          <li class="admin-kpi">
+            <p class="admin-kpi__label">إجمالي المتبرعين</p>
+            <p class="admin-kpi__value text-numeric" data-kpi="donors">٠</p>
+          </li>
+          <li class="admin-kpi">
+            <p class="admin-kpi__label">طلبات مفتوحة</p>
+            <p class="admin-kpi__value text-numeric" data-kpi="open">٠</p>
+          </li>
+          <li class="admin-kpi">
+            <p class="admin-kpi__label">حملات قادمة</p>
+            <p class="admin-kpi__value text-numeric" data-kpi="camps">٠</p>
+          </li>
+          <li class="admin-kpi">
+            <p class="admin-kpi__label">بنوك الدم</p>
+            <p class="admin-kpi__value text-numeric" data-kpi="banks">٠</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============ Donors ============ -->
+      <section id="donors" class="admin-section" aria-labelledby="donors-heading">
+        <div class="admin-section__head">
+          <h2 class="admin-section__title" id="donors-heading">المتبرعون</h2>
+          <div class="admin-section__tools">
+            <label class="visually-hidden" for="donor-search">ابحث في المتبرعين</label>
+            <input class="form-control admin-search" type="search" id="donor-search"
+                   placeholder="ابحث بالاسم أو المدينة" data-search="donors">
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="visually-hidden">قائمة المتبرعين</caption>
+            <thead>
+              <tr>
+                <th scope="col">الاسم</th>
+                <th scope="col">المدينة</th>
+                <th scope="col">الهاتف</th>
+                <th scope="col">الفصيلة</th>
+                <th scope="col">آخر تبرّع</th>
+                <th scope="col"><span class="visually-hidden">إجراءات</span></th>
+              </tr>
+            </thead>
+            <tbody data-admin-table="donors"></tbody>
+          </table>
+        </div>
+        <p class="admin-section__count" role="status" aria-live="polite" data-admin-count="donors"></p>
+      </section>
+
+      <!-- ============ Requests ============ -->
+      <section id="requests" class="admin-section" aria-labelledby="requests-heading">
+        <div class="admin-section__head">
+          <h2 class="admin-section__title" id="requests-heading">طلبات الدم</h2>
+          <div class="admin-section__tools">
+            <label class="visually-hidden" for="request-search">ابحث في الطلبات</label>
+            <input class="form-control admin-search" type="search" id="request-search"
+                   placeholder="ابحث بالمريض أو المستشفى" data-search="requests">
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="visually-hidden">قائمة طلبات الدم</caption>
+            <thead>
+              <tr>
+                <th scope="col">المريض</th>
+                <th scope="col">المستشفى</th>
+                <th scope="col">المدينة</th>
+                <th scope="col">الفصيلة</th>
+                <th scope="col">الوحدات</th>
+                <th scope="col">الأولوية</th>
+                <th scope="col">الحالة</th>
+              </tr>
+            </thead>
+            <tbody data-admin-table="requests"></tbody>
+          </table>
+        </div>
+        <p class="admin-section__count" role="status" aria-live="polite" data-admin-count="requests"></p>
+      </section>
+
+      <!-- ============ Camps ============ -->
+      <section id="camps" class="admin-section" aria-labelledby="camps-heading">
+        <div class="admin-section__head">
+          <h2 class="admin-section__title" id="camps-heading">الحملات</h2>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="visually-hidden">قائمة الحملات</caption>
+            <thead>
+              <tr>
+                <th scope="col">الحملة</th>
+                <th scope="col">المدينة والمكان</th>
+                <th scope="col">التاريخ</th>
+                <th scope="col">التوقيت</th>
+                <th scope="col">التسجيل</th>
+              </tr>
+            </thead>
+            <tbody data-admin-table="camps"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ Banks ============ -->
+      <section id="banks" class="admin-section" aria-labelledby="banks-heading">
+        <div class="admin-section__head">
+          <h2 class="admin-section__title" id="banks-heading">بنوك الدم</h2>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="visually-hidden">قائمة بنوك الدم</caption>
+            <thead>
+              <tr>
+                <th scope="col">الاسم</th>
+                <th scope="col">المدينة</th>
+                <th scope="col">الهاتف</th>
+              </tr>
+            </thead>
+            <tbody data-admin-table="banks"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-region" role="region" aria-label="التنبيهات" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/render.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

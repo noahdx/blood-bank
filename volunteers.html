@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>المتبرعون بالدم | إنقاذ حياة</title>
+<meta name="description" content="ابحث عن متبرعين بالدم حسب فصيلة الدم والمدينة، وتعرّف على حالة كل متبرع وآخر مرة تبرّع فيها.">
+
+<link rel="icon" href="img/savelife-red.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/listings.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">تخطي إلى المحتوى الرئيسي</a>
+
+<header class="site-nav">
+  <div class="container site-nav__inner">
+    <a class="site-nav__brand" href="index.html" aria-label="إنقاذ حياة — الصفحة الرئيسية">
+      <img src="img/savelife-red.svg" alt="" width="32" height="32">
+      <span>إنقاذ حياة</span>
+    </a>
+
+    <button class="site-nav__toggle" type="button" aria-expanded="false"
+            aria-controls="nav-panel" aria-label="فتح قائمة التنقل">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="site-nav__panel" id="nav-panel">
+      <nav aria-label="التنقل الرئيسي">
+        <ul class="site-nav__links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="index.html#about">عن المنصة</a></li>
+          <li><a href="volunteers.html" aria-current="page">المتبرعون</a></li>
+          <li><a href="bloodRequests.html">طلبات الدم</a></li>
+          <li><a href="index.html#camps">حملات التبرع</a></li>
+          <li><a  href="profile.html">حسابي</a></li>
+          <li><a class="btn btn--secondary btn--sm" href="profile.html">حسابي</a></li>
+          <li><a class="btn btn--primary btn--sm" href="regestration.html">سجّل كمتبرع</a></li>
+        </ul>
+      </nav>
+      <!-- <div class="site-nav__actions">
+        <a class="btn btn--secondary btn--sm" href="profile.html">حسابي</a>
+        <a class="btn btn--primary btn--sm" href="regestration.html">سجّل كمتبرع</a>
+      </div> -->
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= Page header ================= -->
+  <section class="page-head">
+    <div class="container">
+      <nav aria-label="مسار التنقل">
+        <ol class="breadcrumb">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li aria-current="page">المتبرعون</li>
+        </ol>
+      </nav>
+
+      <h1>المتبرعون بالدم</h1>
+      <p class="page-head__lead">
+        ابحث حسب فصيلة الدم والمدينة. نعرض حالة كل متبرع وآخر مرة تبرّع فيها
+        حتى تعرف من يمكنه التبرع الآن.
+      </p>
+
+      <div class="page-head__meta">
+        <span class="demo-badge">
+          <i class="fas fa-flask" aria-hidden="true"></i>
+          بيانات تجريبية — أسماء وبيانات وهمية لعرض التصميم
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Donors ================= -->
+  <section class="section section--tight" aria-labelledby="donors-heading">
+    <div class="container">
+
+      <div class="listing-layout">
+
+        <!-- ---------- Filters ---------- -->
+        <aside class="filters" aria-labelledby="filters-heading">
+          <div class="filters__inner">
+            <div class="filters__head">
+              <h2 class="filters__title" id="filters-heading">
+                <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                تصفية النتائج
+              </h2>
+              <button class="btn btn--quiet btn--sm" type="button" data-reset-filters>
+                إعادة تعيين
+              </button>
+            </div>
+
+            <form data-filters novalidate>
+              <fieldset class="filter-group">
+                <legend class="filter-group__legend">فصيلة الدم</legend>
+                <div class="filter-group__options" data-group-options>
+                  <!-- Rendered from js/listings.js -->
+                </div>
+              </fieldset>
+
+              <fieldset class="filter-group">
+                <legend class="filter-group__legend">المدينة</legend>
+                <div class="filter-group__options" data-city-options>
+                  <!-- Rendered from js/listings.js -->
+                </div>
+              </fieldset>
+
+              <fieldset class="filter-group">
+                <legend class="filter-group__legend">حالة التبرع</legend>
+                <div class="filter-group__options">
+                  <span class="choice">
+                    <input type="checkbox" name="eligible" value="yes" id="f-eligible">
+                    <label class="choice__box" for="f-eligible">متاح للتبرع</label>
+                  </span>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </aside>
+
+        <!-- ---------- Results ---------- -->
+        <div class="results">
+          <div class="results__head">
+            <h2 id="donors-heading">قائمة المتبرعين</h2>
+            <!-- Polite live region: filter changes are announced. -->
+            <p class="result-count" role="status" aria-live="polite" data-result-count></p>
+          </div>
+
+          <ul class="donor-list" data-donor-list>
+            <!-- Rendered from js/listings.js -->
+          </ul>
+
+          <div class="empty-state" data-donor-empty>
+            <i class="empty-state__icon fas fa-search" aria-hidden="true"></i>
+            <h3 class="empty-state__title">لا توجد نتائج مطابقة</h3>
+            <p class="empty-state__text">
+              جرّب توسيع نطاق البحث: أزل بعض الفلاتر أو اختر "كل الفصائل" و"كل المدن".
+            </p>
+            <button class="btn btn--secondary btn--sm" type="button" data-reset-filters>
+              إعادة تعيين الفلاتر
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="inline-cta">
+    <div class="container inline-cta__inner">
+      <div>
+        <h2>لم تظهرك في القائمة؟</h2>
+        <p>سجّل بياناتك لتصل إليك الطلبات المطابقة لفصيلتك.</p>
+      </div>
+      <a class="btn btn--inverse btn--lg" href="regestration.html">سجّل كمتبرع</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <h2 class="site-footer__heading">تواصل معنا</h2>
+        <ul class="site-footer__list">
+          <li class="site-footer__contact">
+            <i class="icon fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>مركز بنك الدم — سيدي بشر، الإسكندرية</span>
+          </li>
+          <li class="site-footer__contact">
+            <i class="icon fas fa-phone" aria-hidden="true"></i>
+            <a href="tel:+200348501234">‎03 48501234</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__heading">روابط سريعة</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="volunteers.html">المتبرعون</a></li>
+          <li><a href="bloodRequests.html">طلبات الدم</a></li>
+          <li><a href="regestration.html">تسجيل متبرع</a></li>
+          <li><a href="Admin.html">لوحة الإدارة</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__heading">النشرة البريدية</h2>
+        <p class="site-footer__text">كن أول من يعرف بحملات التبرع القريبة منك.</p>
+        <form class="site-footer__subscribe" data-newsletter novalidate>
+          <label class="visually-hidden" for="footer-email">بريدك الإلكتروني</label>
+          <input class="form-control" type="email" id="footer-email" name="email"
+                 placeholder="name@example.com" required>
+          <button class="btn btn--primary" type="submit">اشترك</button>
+        </form>
+        <p class="field__hint" data-newsletter-status role="status"></p>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__legal">© 2026 إنقاذ حياة — نموذج واجهة أمامي.</p>
+      <p class="site-footer__legal">الموقع لا يستقبل أو يخزّن أي بيانات مستخدمين فعليًا.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" type="button" aria-label="العودة إلى أعلى الصفحة">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+<div class="toast-region" role="region" aria-label="التنبيهات" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/render.js"></script>
+<script src="js/listings.js"></script>
+</body>
+</html>

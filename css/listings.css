@@ -1,0 +1,279 @@
+/* ==========================================================================
+   Save Life — donors & requests listings
+   ========================================================================== */
+
+/* ---------- Page header ---------- */
+.page-head {
+  padding-block: var(--space-7) var(--space-6);
+  background-color: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-head h1 {
+  margin-bottom: var(--space-3);
+}
+
+.page-head__lead {
+  max-width: 56ch;
+  margin-bottom: var(--space-4);
+  font-size: var(--text-body-lg);
+  color: var(--color-text-muted);
+}
+
+.page-head__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ---------- Breadcrumb ----------
+   In RTL, the separator must not imply an LTR reading order, so the
+   chevron is a rotated neutral mark rather than an arrow. */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-inline-end: var(--space-2);
+  color: var(--color-text-faint);
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* ---------- Layout ---------- */
+.listing-layout {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .listing-layout {
+    grid-template-columns: 17.5rem 1fr;
+  }
+}
+
+/* ---------- Filter panel ---------- */
+.filters__inner {
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+}
+
+.filters__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.filters__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--text-h4);
+}
+
+.filters__title i {
+  color: var(--color-primary);
+}
+
+.filters .filter-group + .filter-group {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 992px) {
+  /* Keep the filter panel in view while scrolling a long result list. */
+  .filters {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--space-4));
+  }
+}
+
+/* ---------- Results ---------- */
+.results__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.results__head h2 {
+  margin: 0;
+  font-size: var(--text-h3);
+}
+
+/* ---------- Donor cards ---------- */
+.donor-list,
+.request-list {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.donor {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.donor:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-primary-soft-border);
+}
+
+.donor__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.donor__name {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-h4);
+}
+
+/* The whole card is one link target. */
+.donor__name a {
+  color: var(--color-ink);
+}
+
+.donor__name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.donor {
+  position: relative;
+}
+
+.donor__area {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.donor__facts {
+  list-style: none;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+}
+
+.donor__facts li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-end: var(--space-2);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.donor__facts i {
+  width: 1.1em;
+  flex-shrink: 0;
+  color: var(--color-text-faint);
+}
+
+/* Keep the action above the card-wide click layer. */
+.donor__cta {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* ---------- Request cards ---------- */
+.request-card {
+  border-inline-start-width: 4px;
+}
+
+.request-card--open {
+  background-color: var(--color-surface);
+}
+
+.request-card--fulfilled {
+  background-color: var(--color-surface-alt);
+}
+
+.request-card--fulfilled .request-card__title,
+.request-card--fulfilled .request-card__meta,
+.request-card--fulfilled .request-card__note {
+  opacity: 0.72;
+}
+
+/* ---------- Urgency legend ---------- */
+.urgency-legend {
+  margin-bottom: var(--space-6);
+}
+
+.urgency-legend .badge {
+  margin-inline: var(--space-1);
+}
+
+/* ---------- Inline CTA ---------- */
+.inline-cta {
+  padding-block: var(--space-7);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.inline-cta__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.inline-cta h2 {
+  margin-bottom: var(--space-1);
+  color: #ffffff;
+}
+
+.inline-cta p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+@media (max-width: 575.98px) {
+  .inline-cta__inner .btn {
+    width: 100%;
+  }
+}

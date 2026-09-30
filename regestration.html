@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>تسجيل متبرع | إنقاذ حياة</title>
+<meta name="description" content="سجّل بياناتك كمتبرع دم في منصّة إنقاذ حياة، وأدخل فصيلة الدم والمدينة ليصلك ما يناسبك.">
+
+<link rel="icon" href="img/savelife-red.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/forms.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">تخطي إلى المحتوى الرئيسي</a>
+
+<header class="site-nav">
+  <div class="container site-nav__inner">
+    <a class="site-nav__brand" href="index.html" aria-label="إنقاذ حياة — الصفحة الرئيسية">
+      <img src="img/savelife-red.svg" alt="" width="32" height="32">
+      <span>إنقاذ حياة</span>
+    </a>
+
+    <button class="site-nav__toggle" type="button" aria-expanded="false"
+            aria-controls="nav-panel" aria-label="فتح قائمة التنقل">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="site-nav__panel" id="nav-panel">
+      <nav aria-label="التنقل الرئيسي">
+        <ul class="site-nav__links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="index.html#about">عن المنصة</a></li>
+          <li><a href="volunteers.html">المتبرعون</a></li>
+          <li><a href="bloodRequests.html">طلبات الدم</a></li>
+          <li><a href="index.html#camps">حملات التبرع</a></li>
+          <li><a class="btn btn--secondary btn--sm" href="profile.html">حسابي</a></li>
+          <li><a class="btn btn--primary btn--sm" href="regestration.html" aria-current="page">سجّل كمتبرع</a></li>
+        </ul>
+      </nav>
+      <!-- <div class="site-nav__actions">
+        <a class="btn btn--secondary btn--sm" href="profile.html">حسابي</a>
+        <a class="btn btn--primary btn--sm" href="regestration.html" aria-current="page">سجّل كمتبرع</a>
+      </div> -->
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="container">
+      <nav aria-label="مسار التنقل">
+        <ol class="breadcrumb">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li aria-current="page">تسجيل متبرع</li>
+        </ol>
+      </nav>
+
+      <h1>سجّل كمتبرع</h1>
+      <p class="page-head__lead">
+        بياناتك تساعدنا على مطابقة طلبات الدم المناسبة لك. الحقول المعلّمة بـ
+        <span class="field__required" aria-hidden="true">*</span> مطلوبة.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="form-layout">
+
+        <!-- ============ The form ============ -->
+        <div class="form-layout__main">
+          <form class="card form-card" data-validate novalidate>
+
+            <div class="card__body">
+              <h2 class="form-section__title">
+                <span class="form-section__num" aria-hidden="true">١</span>
+                البيانات الأساسية
+              </h2>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label class="field__label" for="full-name">
+                    الاسم بالكامل <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                  <input class="form-control" type="text" id="full-name" name="fullName"
+                         required autocomplete="name" aria-describedby="full-name-hint">
+                  <p class="field__hint" id="full-name-hint">اكتب اسمك كما يظهر في بطاقة الهوية.</p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="national-id">
+                    الرقم القومي <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                  <input class="form-control" type="text" id="national-id" name="nationalId"
+                         required inputmode="numeric" pattern="[0-9]{14}" maxlength="14"
+                         autocomplete="off" aria-describedby="national-id-hint">
+                  <p class="field__hint" id="national-id-hint">14 رقمًا. يُستخدم للتحقّق فقط ولا يظهر للعلن.</p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="phone">
+                    رقم الهاتف <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                  <input class="form-control" type="tel" id="phone" name="phone"
+                         required autocomplete="tel" placeholder="01xxxxxxxxx"
+                         pattern="01[0-9]{9}" maxlength="11"
+                         aria-describedby="phone-hint">
+                  <p class="field__hint" id="phone-hint">سنتواصل معك عند توفر طلب يناسب فصيلتك.</p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="email">
+                    البريد الإلكتروني
+                    <span class="field__optional">(اختياري)</span>
+                  </label>
+                  <input class="form-control" type="email" id="email" name="email"
+                         autocomplete="email" aria-describedby="email-hint">
+                  <p class="field__hint" id="email-hint">لإرسال الحملات والتنبيهات.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card__body">
+              <h2 class="form-section__title">
+                <span class="form-section__num" aria-hidden="true">٢</span>
+                فصيلة الدم والموقع
+              </h2>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label class="field__label" for="blood-group">
+                    فصيلة الدم <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                  <select class="form-select" id="blood-group" name="group"
+                          required aria-describedby="blood-group-hint">
+                    <option value="">اختر الفصيلة</option>
+                    <!-- Rendered from js/data.js BLOOD_GROUPS -->
+                  </select>
+                  <p class="field__hint" id="blood-group-hint">
+                    لا تعرف فصيلتك؟<a href="index.html#how">طريقة الكشف</a>
+                  </p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="city">
+                    المدينة <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                  <select class="form-select" id="city" name="city" required>
+                    <option value="">اختر المدينة</option>
+                    <!-- Rendered from js/data.js CITIES -->
+                  </select>
+                </div>
+
+                <div class="field field--full">
+                  <label class="field__label" for="address">
+                    العنوان بالتفصيل
+                    <span class="field__optional">(اختياري)</span>
+                  </label>
+                  <input class="form-control" type="text" id="address" name="address"
+                         autocomplete="street-address"
+                         aria-describedby="address-hint">
+                  <p class="field__hint" id="address-hint">
+                    المنطقة أو أقرب علامة مميزة — لا يظهر العنوان الكامل للعلن.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card__body">
+              <h2 class="form-section__title">
+                <span class="form-section__num" aria-hidden="true">٣</span>
+                سجل التبرع
+              </h2>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label class="field__label" for="last-donation">
+                    آخر مرة تبرعت فيها
+                  </label>
+                  <select class="form-select" id="last-donation" name="lastDonation"
+                          aria-describedby="last-donation-hint">
+                    <option value="">لم أتبرع من قبل</option>
+                    <option value="1">خلال شهر</option>
+                    <option value="2">من شهرين</option>
+                    <option value="3">من 3 أشهر</option>
+                    <option value="4">من 4 أشهر</option>
+                    <option value="6">من 6 أشهر</option>
+                    <option value="12">من سنة أو أكثر</option>
+                  </select>
+                  <p class="field__hint" id="last-donation-hint">
+                    الحد الأدنى بين التبرعين يحدّده بنك الدم بعد الفحص.
+                  </p>
+                </div>
+
+                <fieldset class="field field--full choice-set">
+                  <legend class="field__label">أنواع التبرع المتاحة</legend>
+                  <span class="choice">
+                    <input type="checkbox" id="m-blood" name="channels" value="blood" checked>
+                    <label class="choice__box" for="m-blood">التبرع بالدم</label>
+                  </span>
+                  <span class="choice">
+                    <input type="checkbox" id="m-plasma" name="channels" value="plasma">
+                    <label class="choice__box" for="m-plasma">التبرع بالبلازما</label>
+                  </span>
+                  <span class="choice">
+                    <input type="checkbox" id="m-organs" name="channels" value="organs">
+                    <label class="choice__box" for="m-organs">التبرع بالأعضاء</label>
+                  </span>
+                </fieldset>
+              </div>
+            </div>
+
+            <div class="card__body">
+              <h2 class="form-section__title">
+                <span class="form-section__num" aria-hidden="true">٤</span>
+                الموافقة والتأكيد
+              </h2>
+
+              <div class="notice notice--warning">
+                <i class="icon fas fa-heartbeat" aria-hidden="true"></i>
+                <p>
+                  يقرأ بنك الدم ملفك طبيًا قبل أي تبرع، والتسجيل هنا لا يعني
+                  أهليتك الطبية. اتّبع تعليمات بنك الدم دائمًا.
+                </p>
+              </div>
+
+              <div class="field">
+                <span class="choice">
+                  <input type="checkbox" id="consent" name="consent" required
+                         aria-describedby="consent-error">
+                  <label class="choice__box" for="consent">
+                    أوافق على معالجة بياناتي للتواصل معي بخصوص التبرع بالدم.
+                    <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                </span>
+              </div>
+            </div>
+
+            <div class="card__footer">
+              <p class="demo-badge demo-badge--inline">
+                <i class="fas fa-flask" aria-hidden="true"></i>
+                نموذج تجريبي — لا تُرسل البيانات ولا تُحفظ
+              </p>
+              <div class="btn-group-actions">
+                <a class="btn btn--quiet" href="index.html">إلغاء</a>
+                <button class="btn btn--primary" type="submit">
+                  <i class="fas fa-heart" aria-hidden="true"></i>
+                  أرسل التسجيل
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- ============ Sidebar ============ -->
+        <aside class="form-layout__aside">
+          <div class="card sticky-card">
+            <div class="card__body">
+              <h2 class="card__title">
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                خصوصية بياناتك
+              </h2>
+              <ul class="tick-list">
+                <li>الاسم يظهر للمتبرعين فقط، والرقم القومي لا يظهر لأحد.</li>
+                <li>العنوان يُستخدم لتحديد أقرب مركز تبرع فقط.</li>
+                <li>يمكنك طلب حذف بياناتك في أي وقت.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__body">
+              <h2 class="card__title">
+                <i class="fas fa-question-circle" aria-hidden="true"></i>
+                شروط عامة للتبرع
+              </h2>
+              <ul class="tick-list tick-list--muted">
+                <li>السن عادة بين 18 و 60 سنة.</li>
+                <li>الوزن لا يقل عن 50 كجم.</li>
+                <li>فحص تحليل جديد قبل كل تبرع.</li>
+                <li>تجنّب التبرع أثناء الحمّى أو بعد شرب الكحول.</li>
+              </ul>
+              <p class="card__meta">
+                الشروط تختلف حسب بنك الدم — راجع المركز المتخصص.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <h2 class="site-footer__heading">تواصل معنا</h2>
+        <ul class="site-footer__list">
+          <li class="site-footer__contact">
+            <i class="icon fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>مركز بنك الدم — سيدي بشر، الإسكندرية</span>
+          </li>
+          <li class="site-footer__contact">
+            <i class="icon fas fa-phone" aria-hidden="true"></i>
+            <a href="tel:+200348501234">‎03 48501234</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__heading">روابط سريعة</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="volunteers.html">المتبرعون</a></li>
+          <li><a href="bloodRequests.html">طلبات الدم</a></li>
+          <li><a href="regestration.html">تسجيل متبرع</a></li>
+          <li><a href="Admin.html">لوحة الإدارة</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__heading">النشرة البريدية</h2>
+        <p class="site-footer__text">كن أول من يعرف بحملات التبرع القريبة منك.</p>
+        <form class="site-footer__subscribe" data-newsletter novalidate>
+          <label class="visually-hidden" for="footer-email">بريدك الإلكتروني</label>
+          <input class="form-control" type="email" id="footer-email" name="email"
+                 placeholder="name@example.com" required>
+          <button class="btn btn--primary" type="submit">اشترك</button>
+        </form>
+        <p class="field__hint" data-newsletter-status role="status"></p>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__legal">© 2026 إنقاذ حياة — نموذج واجهة أمامي.</p>
+      <p class="site-footer__legal">الموقع لا يستقبل أو يخزّن أي بيانات مستخدمين فعليًا.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" type="button" aria-label="العودة إلى أعلى الصفحة">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+<div class="toast-region" role="region" aria-label="التنبيهات" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/forms.js"></script>
+</body>
+</html>

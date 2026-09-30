@@ -1,0 +1,225 @@
+/* ==========================================================================
+   Save Life — design tokens
+   Single source of truth for colour, type, space, radius, shadow and motion.
+   Every other stylesheet consumes these variables and must not invent values.
+   ========================================================================== */
+
+/* ---------- Fonts (self-hosted, no external request) ---------- */
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-400-arabic.woff2) format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+    U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74,
+    U+FE76-FEFC;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-400-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-500-arabic.woff2) format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+    U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74,
+    U+FE76-FEFC;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-500-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-600-arabic.woff2) format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+    U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74,
+    U+FE76-FEFC;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-600-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-700-arabic.woff2) format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+    U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74,
+    U+FE76-FEFC;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/ibm-plex-sans-arabic-700-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ---------- Brand / primary ----------
+     A deep, desaturated crimson. Confident enough to read as "blood donation"
+     without the alarm of a pure red. All pairs verified against WCAG AA. */
+  --color-primary: #a61b29;
+  --color-primary-hover: #8c1521;
+  --color-primary-active: #75111b;
+  --color-primary-soft: #fdf2f2;
+  --color-primary-soft-border: #f2d4d6;
+  --color-on-primary: #ffffff;
+
+  /* ---------- Surfaces ---------- */
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f6f7f9;
+  --color-surface-sunken: #eef0f3;
+
+  /* ---------- Ink ---------- */
+  --color-ink: #171a1f; /* 17.4:1 on white */
+  --color-ink-soft: #3d444d;
+  --color-text-muted: #565e68; /* 6.6:1 on white */
+  --color-text-faint: #767e88;
+  --color-on-ink: #ffffff;
+
+  /* ---------- Status ---------- */
+  --color-success: #166b4c;
+  --color-success-soft: #e8f4ef;
+  --color-warning: #8a4b08;
+  --color-warning-soft: #fdf3e7;
+  --color-danger: #b3261e;
+  --color-danger-soft: #fdeceb;
+  --color-info: #1b4f8f;
+  --color-info-soft: #ecf2fa;
+
+  /* ---------- Borders ---------- */
+  --color-border: #e3e6ea; /* decorative dividers only */
+  --color-border-strong: #767e88; /* form control boundaries — 4.1:1 */
+  --color-border-focus: #a61b29;
+
+  /* ---------- Blood-group identity colours ----------
+     Used only as small chips/tags, never as large fills. */
+  --group-o-fg: #8c1521;
+  --group-o-bg: #fff3f3;
+  --group-a-fg: #a61b29;
+  --group-a-bg: #fff3f3;
+  --group-b-fg: #1b4f8f;
+  --group-b-bg: #eff5fc;
+  --group-ab-fg: #6b4e9e;
+  --group-ab-bg: #f5f1fc;
+
+  /* ---------- Type ---------- */
+  --font-sans: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma,
+    "Geeza Pro", sans-serif;
+  --font-numeric: "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
+
+  --text-display: 2.75rem;
+  --text-h1: 2.125rem;
+  --text-h2: 1.625rem;
+  --text-h3: 1.25rem;
+  --text-h4: 1.0625rem;
+  --text-body-lg: 1.0625rem;
+  --text-body: 0.9375rem;
+  --text-small: 0.8125rem;
+  --text-xs: 0.75rem;
+
+  --leading-display: 1.35;
+  --leading-heading: 1.45;
+  --leading-body: 1.85; /* Arabic needs more leading than Latin */
+  --leading-tight: 1.6;
+
+  --tracking-display: -0.01em;
+  --tracking-body: 0;
+
+  /* ---------- Space (4px base) ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-pill: 999px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-xs: 0 1px 2px rgba(23, 26, 31, 0.06);
+  --shadow-sm: 0 1px 2px rgba(23, 26, 31, 0.06),
+    0 2px 6px rgba(23, 26, 31, 0.06);
+  --shadow-md: 0 2px 4px rgba(23, 26, 31, 0.05),
+    0 8px 20px rgba(23, 26, 31, 0.08);
+  --shadow-lg: 0 4px 8px rgba(23, 26, 31, 0.05),
+    0 18px 40px rgba(23, 26, 31, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(166, 27, 41, 0.28);
+
+  /* ---------- Layout ---------- */
+  --container-max: 1180px;
+  --nav-height: 4.25rem;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 380ms;
+
+  /* ---------- Z-index ---------- */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-backtop: 300;
+  --z-modal: 1050;
+}
+
+/* Blood-group colour helpers. Used by donor/request cards. */
+.group-o {
+  --group-fg: var(--group-o-fg);
+  --group-bg: var(--group-o-bg);
+}
+.group-a {
+  --group-fg: var(--group-a-fg);
+  --group-bg: var(--group-a-bg);
+}
+.group-b {
+  --group-fg: var(--group-b-fg);
+  --group-bg: var(--group-b-bg);
+}
+.group-ab {
+  --group-fg: var(--group-ab-fg);
+  --group-bg: var(--group-ab-bg);
+}
