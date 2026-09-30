@@ -4,8 +4,6 @@ A static website for a blood donation platform. It connects blood donors with pe
 
 The site is written in Arabic and uses right-to-left (RTL) layout.
 
-Repository: https://github.com/na110/blood-bank
-
 ## Tech
 
 This project is **frontend only**. There is no server, no database, and no build step.
